@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(#bdc3c7,#f39c12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    height: 90vh;
+    width: 60vw;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, #95a5a6 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 5px;
+    display: flex;
+}
+
+.left{
+    background: url('./images/cloudy.gif') no-repeat;
+    height: 100%;
+    width: 50%;
+    background-size: 100% 100%;
+    position: relative;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+
+}
+
+.city{
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    font-size: 1.5rem;
+}
+
+.country{
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    font-size: 2rem;
+}
+
+.current-time{
+    position: absolute;
+    left: 5%;
+    bottom: 10%;
+    font-size: 1.5em;
+}
+
+.current-date{
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+    font-size: 1.5em;
+}
+
+.temprature{
+    position: absolute;
+    left: 5%;
+    bottom: 20%;
+    font-size: 2.5rem;   
+}
+
+.right{
+    height: 100%;
+    width: 50%;
+    padding: 5%;
+}
+
+.icon-with-weather{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-with-weather p{
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+.city-input-box {
+    height: 10%;
+    width: 100%;
+    padding: 0 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    color:#ffffff;
+}
+
+.city-input-box input{
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 80%;
+    text-align: center;
+    font-size: 20px;
+}
+
+#search-btn{
+    height: 60%;
+    width: 20%;
+    padding: 5px;
+    background-color:#ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.city-output{
+    height: 10%;
+    width: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    color:#ffffff;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.other-details{
+    height: 40%;
+    width: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    color:#ffffff;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    font-size: 20px;
+}

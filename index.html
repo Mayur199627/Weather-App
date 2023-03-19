@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="shortcut icon" href="./images/weather fevicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <div id="time"></div>
+        <section class="left">
+            <div class="city">City</div>
+            <div class="country">Country</div>
+            <div class="current-time"></div>
+            <div class="current-date"></div>
+            <div class="temprature"><sup>o</sup>c</div>
+        </section>
+        <section class="right">
+            <div class="icon-with-weather">
+                <img src="./images/haze.png" alt="haze" height="70" width="70">
+                <p class="weather-status">Weather</p>
+            </div>
+            <form class="city-input-box">
+                <input type="text" placeholder="Search here" id="city-input">
+                <button id="search-btn" type="submit"><svg fill="#000000" height="15px" width="15px" version="1.1"
+                        id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 490.4 490.4" xml:space="preserve">
+                        <g>
+                            <path
+                                d="M484.1,454.796l-110.5-110.6c29.8-36.3,47.6-82.8,47.6-133.4c0-116.3-94.3-210.6-210.6-210.6S0,94.496,0,210.796
+                       s94.3,210.6,210.6,210.6c50.8,0,97.4-18,133.8-48l110.5,110.5c12.9,11.8,25,4.2,29.2,0C492.5,475.596,492.5,463.096,484.1,454.796z
+                        M41.1,210.796c0-93.6,75.9-169.5,169.5-169.5s169.6,75.9,169.6,169.5s-75.9,169.5-169.5,169.5S41.1,304.396,41.1,210.796z" />
+                        </g>
+                    </svg></button>
+            </form>
+            <div class="city-output">City </div>
+            <div class="other-details">
+                <p>Temprature :&nbsp;<span class="tempra-ture"></span></p>
+                <p>Humidity :&nbsp;<span class="humi-dity"></span></p>
+                <p>Visibility  :&nbsp;<span class="visi-bility"></span></p>
+                <p>Wind Speed :&nbsp;<span class="w-speed"></span></p>
+            </div>
+
+        </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+
+</html>
