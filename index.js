@@ -22,9 +22,9 @@ searchBtn.addEventListener("click", (e) => {
 })
 
 // function for render weather data
-function renderWeatherData(city) {
+async function renderWeatherData(city) {
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=ce946b4bc58f5c8cac8f58f62a31ed59&units=metric`)
+    await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=ce946b4bc58f5c8cac8f58f62a31ed59&units=metric`)
         .then((res) => {
             return res.json();
         })
@@ -35,8 +35,27 @@ function renderWeatherData(city) {
         <div class="current-date">${new Date().toDateString()}</div>
         <div class="temprature">${Math.floor(data.main.temp)}<sup>o</sup>c</div>`
 
+        let whetherImg = "./images/haze.png";
+        if(data.weather[0].main=="Thunderstorm"){
+            whetherImg = "./images/thunder.png"
+        }
+        else if(data.weather[0].main=="Clouds"){
+            whetherImg = "./images/cloudy.png"
+        }
+        else if(data.weather[0].main=="Rain"){
+            whetherImg = "./images/rain.png"
+        }        
+        else if(data.weather[0].main=="Clear"){
+            whetherImg = "./images/clear.png"
+        }
+        else if(data.weather[0].main=="Snow"){
+            whetherImg = "./images/snow.png"
+        }
+        else if(data.weather[0].main=="Mist"){
+            whetherImg = "./images/mist.png"
+        }
             rightSection.innerHTML = `<div class="icon-with-weather">
-        <img src="./images/haze.png" alt="haze" height="70" width="70">
+        <img src=${whetherImg} alt="haze" height="70" width="70">
         <p class="weather-status">${data.weather[0].main}</p>
     </div>
     <form class="city-input-box">
