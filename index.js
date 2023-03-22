@@ -3,21 +3,13 @@ let searchBtn = document.querySelector("#search-btn");
 let leftSection = document.querySelector(".left")
 let rightSection = document.querySelector(".right")
 
-
-// function for update Real Time And Date
-
-setInterval(timeDateSet, 1000)
-function timeDateSet() {
-    document.querySelector(".current-time").innerText = new Date().toLocaleTimeString();
-    document.querySelector(".current-date").innerText = new Date().toDateString();
-}
+let city;
 
 // Event Listener for city weather search
 
 searchBtn.addEventListener("click", (e) => {
     e.preventDefault();
     city = cityInput.value;
-    // console.log(city)
     renderWeatherData(city)
 })
 
@@ -29,31 +21,60 @@ async function renderWeatherData(city) {
             return res.json();
         })
         .then((data) => {
+
+            // function for update Real Time And Date
+
+            let currTime = "";
+            let currDate = "";
+            let lati = data.coord.lat;
+            let long = data.coord.lon;
+            
+            function timeDateSet() {
+                // specific Time for specific place
+
+                let date = new Date();
+                let utcMin = date.getTimezoneOffset() + 30;
+                let utcHour = utcMin / 60;
+                let timeZoneOffset = Math.round(long / 15);
+
+                let localTime = new Date(date.getTime() + (utcHour + timeZoneOffset) * 60 * 60 * 1000)
+                currTime = localTime.toLocaleTimeString();
+                currDate = localTime.toDateString();
+                document.querySelector(".current-time").innerText = currTime;
+                document.querySelector(".current-date").innerText = currDate;
+            }
+            setInterval(timeDateSet, 1000)
+
+            // Left Section
+
             leftSection.innerHTML = `<div class="city">${data.name}</div>
         <div class="country">${data.sys.country}</div>
-        <div class="current-time">${new Date().toLocaleTimeString()}</div>
-        <div class="current-date">${new Date().toDateString()}</div>
+        <div class="current-time">${currTime}</div>
+        <div class="current-date">${currDate}</div>
         <div class="temprature">${Math.floor(data.main.temp)}<sup>o</sup>c</div>`
 
-        let whetherImg = "./images/haze.png";
-        if(data.weather[0].main=="Thunderstorm"){
-            whetherImg = "./images/thunder.png"
-        }
-        else if(data.weather[0].main=="Clouds"){
-            whetherImg = "./images/cloudy.png"
-        }
-        else if(data.weather[0].main=="Rain"){
-            whetherImg = "./images/rain.png"
-        }        
-        else if(data.weather[0].main=="Clear"){
-            whetherImg = "./images/clear.png"
-        }
-        else if(data.weather[0].main=="Snow"){
-            whetherImg = "./images/snow.png"
-        }
-        else if(data.weather[0].main=="Mist"){
-            whetherImg = "./images/mist.png"
-        }
+            let whetherImg = "./images/haze.png";
+            if (data.weather[0].main == "Thunderstorm") {
+                whetherImg = "./images/thunder.png"
+            }
+            else if (data.weather[0].main == "Clouds") {
+                whetherImg = "./images/cloudy.png"
+            }
+            else if (data.weather[0].main == "Rain") {
+                whetherImg = "./images/rain.png"
+            }
+            else if (data.weather[0].main == "Clear") {
+                whetherImg = "./images/clear.png"
+            }
+            else if (data.weather[0].main == "Snow") {
+                whetherImg = "./images/snow.png"
+            }
+            else if (data.weather[0].main == "Mist") {
+                whetherImg = "./images/mist.png"
+            }
+
+            // Right section
+
             rightSection.innerHTML = `<div class="icon-with-weather">
         <img src=${whetherImg} alt="haze" height="70" width="70">
         <p class="weather-status">${data.weather[0].main}</p>
