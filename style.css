@@ -7,10 +7,12 @@
 body{
     height: 100vh;
     width: 100%;
-    background: linear-gradient(#bdc3c7,#f39c12);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: url('./images/Back.jfif') no-repeat;
+    background-size: 100%;
+    position: fixed;
+    top: 5vh;
+    left: 20%;
+    transform: translate((-50%,-50%));
 }
 
 main{
@@ -29,6 +31,7 @@ main{
     position: relative;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #ffffff;
+    border-radius: 5px;
 
 }
 
@@ -73,6 +76,7 @@ main{
     padding: 5%;
     background-color: #2d3436;
     opacity: 0.9;
+    border-radius: 5px;
 }
 
 .icon-with-weather{
@@ -90,7 +94,7 @@ main{
     color: #ffffff;
 }
 
-.city-input-box {
+#city-input-box {
     height: 10%;
     width: 100%;
     padding: 0 10%;
@@ -102,7 +106,7 @@ main{
     border-radius: 10px;
 }
 
-.city-input-box input{
+#city-input-box input{
     border: none;
     outline: none;
     background: transparent;
@@ -140,7 +144,7 @@ main{
 }
 
 .other-details{
-    height: 40%;
+    height: 45%;
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     color:#ffffff;
