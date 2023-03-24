@@ -31,7 +31,7 @@ main{
     position: relative;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #ffffff;
-    border-radius: 5px;
+    border-radius: 5px 5px 0px 0px;
 
 }
 
@@ -76,7 +76,7 @@ main{
     padding: 5%;
     background-color: #2d3436;
     opacity: 0.9;
-    border-radius: 5px;
+    border-radius: 0 0 5px 5px;
 }
 
 .icon-with-weather{
@@ -157,7 +157,21 @@ main{
     font-size: 1.2em;
 }
 
+
+@media only screen and (max-width:1200px) {
+
+    body{
+        background: url('./images/Back.jfif') no-repeat;
+       }
+
+    }
+
 @media only screen and (max-width:720px) {
+
+    body{
+        background: url('./images/Back.jfif') no-repeat;
+       }
+
     main{
         display: flex;
         flex-direction: column;
@@ -165,12 +179,12 @@ main{
     }
 
     .left{
-        height: 30%;
+        height: 40%;
         width: 100%;
     }
    
     .right{
-        height: 70%;
+        height: 60%;
         width: 100%;
     }
 
@@ -212,16 +226,20 @@ main{
 }
 
 @media only screen and (max-width:350px) {
+   body{
+    background: url('./images/Back.jfif') no-repeat;
+   }
     
     main{
         font-size: 10px;
+
     }
     
     .left{
-        height: 20%;
+        height: 40%;
     }
     .right{
-        height: 80%;
+        height: 60%;
     }
 
     .icon-with-weather{
